@@ -1,8 +1,13 @@
 'use strict';
 
 // Call this function when the page loads (the "ready" event)
-$(document).ready(function() {
+$(document).ready(function () {
 	initializePage();
+
+	$('.friend a').click(function (e) {
+		e.preventDefault();
+		$(this).find('h3').text(anagrammedName($(this).text()));
+	});
 })
 
 /*
@@ -14,33 +19,33 @@ function initializePage() {
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
-	
-	if (name == "Doug Engelbart") {
+
+	if (name === "Doug Engelbart") {
 		return "Notable Grudge";
-	} 
-	else if (name == "Ivan Sutherland") {
+	}
+	else if (name === "Ivan Sutherland") {
 		return "Vandal Heist Run";
 	}
-	else if (name == "JCR Licklider") {
+	else if (name === "JCR Licklider") {
 		return "Crick Rid Jell";
 	}
-	else if (name == "Vannevar Bush") {
+	else if (name === "Vannevar Bush") {
 		return "Ravens Van Hub";
 	}
-	else if (name == "Alan C. Kay") {
+	else if (name === "Alan C. Kay") {
 		return "Canal Yak";
 	}
-	else if (name == "Allen Newell") {
+	else if (name === "Allen Newell") {
 		return "Ellen All New";
 	}
-	else if (name == "Lucy Suchman") {
+	else if (name === "Lucy Suchman") {
 		return "Lunacy Chums";
 	}
-	else if (name == "Grace Hopper") {
+	else if (name === "Grace Hopper") {
 		return "Gear Chopper";
 	}
 	else {
-		console.log(name + " not known for anagramming.");
+		console.log(name + name.typeOf);
 		return name;
 	}
 }
